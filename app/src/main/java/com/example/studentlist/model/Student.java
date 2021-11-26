@@ -4,28 +4,29 @@ public class Student {
 
     String name = "";
     String id = "";
-    String phone = "";
-    String address = "";
+    //String phone = "";
+    //String address = "";
     boolean flag = false;
 
     public Student(){}
-    public Student(String name, String id, boolean flag, String phone, String address) {
+
+    public Student(String name, String id, boolean flag) {
         this.name = name;
         this.id = id;
         this.flag = flag;
-        this.phone = phone;
-        this.address = address;
+        //this.phone = phone;
+        //this.address = address;
     }
 
     public void setId(String id) {
         this.id = id;
     }
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-    public void setAddress(String address ) {
-        this.address = address;
-    }
+//    public void setPhone(String phone) {
+//        this.phone = phone;
+//    }
+//    public void setAddress(String address ) {
+//        this.address = address;
+//    }
     public void setFlag(boolean flag) {
         this.flag = flag;
     }
@@ -35,10 +36,12 @@ public class Student {
     public String getName() {
         return name;
     }
-    public String getPhone() {
-        return phone;
-    }
-    public String getAddress() { return address; }
+//    public String getPhone() {
+//        return phone;
+//    }
+//    public String getAddress() {
+//    return address;
+//    }
     public String getId() {
         return id;
     }

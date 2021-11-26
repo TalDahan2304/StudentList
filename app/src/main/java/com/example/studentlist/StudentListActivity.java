@@ -12,14 +12,22 @@ import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.studentlist.model.Model;
+import com.example.studentlist.model.Student;
+
+import java.util.List;
+
 public class StudentListActivity extends AppCompatActivity {
 
+    List<Student> data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_list);
 
+        data = Model.instance.getAllStudents();
         MyAdapter adapter = new MyAdapter();
+
         ListView listv = findViewById(R.id.studentlist_listv);
         listv.setAdapter(adapter);
 
@@ -27,10 +35,15 @@ public class StudentListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Log.d("TAG","row was clicked" + position);
-
+                Log.d("TAG", "row was clicked" + position);
             }
         });
+//        listv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Log.d("TAG","row was clicked" + position);
+//            }
+//        });
     }
 
     class MyAdapter extends BaseAdapter{
@@ -38,7 +51,7 @@ public class StudentListActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 20;
+            return data.size();
         }
 
         @Override
@@ -56,12 +69,29 @@ public class StudentListActivity extends AppCompatActivity {
 
             if (convertView == null) {
                 convertView = getLayoutInflater().inflate(R.layout.student_list_row, null);
+                CheckBox cb = convertView.findViewById(R.id.listrow_cb);
+                cb.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        int pos = Integer.parseInt(v.getTag().toString());
+                        Log.d("TAG", "cbn position " + pos);
+                        Student s = data.get(pos);
+                        s.setFlag(cb.isChecked());
+                    }
+                });
+
             }
             TextView nameTv = convertView.findViewById(R.id.listrow_name_tv);
             TextView idTv = convertView.findViewById(R.id.listrow_id_tv);
             CheckBox cb = convertView.findViewById(R.id.listrow_cb);
-            nameTv.setText("name" + position);
-            idTv.setText("123_" + position);
+            cb.setTag(position);
+
+            Student student = data.get(position);
+
+            nameTv.setText(student.getName());
+            idTv.setText(student.getId());
+            cb.setChecked(student.isFlag());
             return convertView;
         }
     }
