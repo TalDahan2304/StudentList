@@ -3,8 +3,10 @@ package com.example.studentlist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
@@ -20,6 +22,15 @@ public class StudentListActivity extends AppCompatActivity {
         MyAdapter adapter = new MyAdapter();
         ListView listv = findViewById(R.id.studentlist_listv);
         listv.setAdapter(adapter);
+
+        listv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Log.d("TAG","row was clicked" + position);
+
+            }
+        });
     }
 
     class MyAdapter extends BaseAdapter{
