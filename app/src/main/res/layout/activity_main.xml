@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editstudent_id_ed"
+        android:id="@+id/newstudent_id_ed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/editstudent_name_et"
+        app:layout_constraintTop_toBottomOf="@+id/newstudent_name_et"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/main_avatar_imv" />
 
     <EditText
-        android:id="@+id/editstudent_name_et"
+        android:id="@+id/newstudent_name_et"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -72,7 +72,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <CheckBox
-        android:id="@+id/editstudent_cb"
+        android:id="@+id/newstudent_cb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -92,12 +92,12 @@
         android:text="Cancel"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editstudent_save_btn"
+        app:layout_constraintEnd_toStartOf="@+id/newstudent_save_btn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/editstudent_save_btn"
+        android:id="@+id/newstudent_save_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"

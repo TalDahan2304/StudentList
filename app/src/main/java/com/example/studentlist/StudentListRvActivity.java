@@ -30,8 +30,10 @@ public class StudentListRvActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_list_rv);
 
-        ////////////////
+        // Intents:
         Intent intentnew = new Intent(this, NewStudentActivity.class);
+        Intent intentdetails = new Intent(this, DetailsStudentActivity.class);
+
         addstudent = findViewById(R.id.studentlistrv_addstudent_btn);
 
        addstudent.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +42,8 @@ public class StudentListRvActivity extends AppCompatActivity {
                startActivity(intentnew);
            }
        });
-        ////////////////
+
+
         data = Model.instance.getAllStudents();
         RecyclerView list = findViewById(R.id.studentlist_rv);
         list.setHasFixedSize(true);
@@ -52,9 +55,14 @@ public class StudentListRvActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void OnItemClick(int position) {
-                Log.d("TAG", "row was clicked" + position);
-                Log.d("TAG", "name of student:" + data.get(position).getName());
-                Log.d("TAG", "id of student:" + data.get(position).getId());
+
+//                Student student = data.get(position);
+//                Log.d("TAG", "row was clicked" + position);
+//                Log.d("TAG", "name of student:" + data.get(position).getName());
+//                Log.d("TAG", "id of student:" + data.get(position).getId());
+
+                intentdetails.putExtra("position", position);
+                startActivity(intentdetails);
 
             }
         });
