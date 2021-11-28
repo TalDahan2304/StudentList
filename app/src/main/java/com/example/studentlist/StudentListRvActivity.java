@@ -30,18 +30,17 @@ public class StudentListRvActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_list_rv);
 
-        // Intents:
         Intent intentnew = new Intent(this, NewStudentActivity.class);
         Intent intentdetails = new Intent(this, DetailsStudentActivity.class);
 
         addstudent = findViewById(R.id.studentlistrv_addstudent_btn);
 
-       addstudent.setOnClickListener(new View.OnClickListener() {
+        addstudent.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                startActivity(intentnew);
            }
-       });
+        });
 
 
         data = Model.instance.getAllStudents();
@@ -56,14 +55,8 @@ public class StudentListRvActivity extends AppCompatActivity {
             @Override
             public void OnItemClick(int position) {
 
-//                Student student = data.get(position);
-//                Log.d("TAG", "row was clicked" + position);
-//                Log.d("TAG", "name of student:" + data.get(position).getName());
-//                Log.d("TAG", "id of student:" + data.get(position).getId());
-
                 intentdetails.putExtra("position", position);
                 startActivity(intentdetails);
-
             }
         });
     }
@@ -86,6 +79,15 @@ public class StudentListRvActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     int pos = getAdapterPosition();
                     listener.OnItemClick(pos);
+                }
+            });
+
+            cb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    Student std = data.get(position);
+                    std.setFlag(cb.isChecked());
                 }
             });
         }

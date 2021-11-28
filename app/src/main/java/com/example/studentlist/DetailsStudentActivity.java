@@ -35,11 +35,11 @@ public class DetailsStudentActivity extends AppCompatActivity {
         edit = findViewById(R.id.detailstudent_edit2_btn);
         data = Model.instance.getAllStudents();
 
-//        name.setEnabled(false);
-//        id.setEnabled(false);
-//        phone.setEnabled(false);
-//        address.setEnabled(false);
-//        cb.setEnabled(false);
+        name.setEnabled(false);
+        id.setEnabled(false);
+        phone.setEnabled(false);
+        address.setEnabled(false);
+        cb.setEnabled(false);
 
         Intent intentedit = new Intent(this, EditStudentActivity.class);
 
@@ -47,7 +47,6 @@ public class DetailsStudentActivity extends AppCompatActivity {
         if(extras != null){
 
             position = extras.getInt("position");
-            //Student student = data.get(position);
             name.setText(Model.instance.getStudent(position).getName());
             id.setText(Model.instance.getStudent(position).getId());
             phone.setText(Model.instance.getStudent(position).getPhone());
