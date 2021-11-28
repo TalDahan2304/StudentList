@@ -8,7 +8,7 @@ public class Model {
     public static final Model instance = new Model();
 
     private Model(){
-        for(int i=0;i<100;i++){
+        for(int i=0;i<10;i++){
             Student s = new Student("name",""+i,false, "phone", "address");
             data.add(s);
         }

@@ -18,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Reference
-        nameET=findViewById(R.id.newstudent_name_et);
-        idET=findViewById(R.id.newstudent_id_ed);
-        cb=findViewById(R.id.newstudent_cb);
-        Button saveBtn=findViewById(R.id.newstudent_save_btn);
+        nameET=findViewById(R.id.editstudent_name_et);
+        idET=findViewById(R.id.editstudent_id_ed);
+        cb=findViewById(R.id.editstudent_cb);
+        Button saveBtn=findViewById(R.id.editstudent_save_btn);
         Button cancelBtn=findViewById(R.id.newstudent_cancel_btn);
 
         saveBtn.setOnClickListener(new View.OnClickListener() {

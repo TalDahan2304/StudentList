@@ -22,19 +22,29 @@ public class NewStudentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_student);
 
-        name = findViewById(R.id.newstudent_name_et);
-        id = findViewById(R.id.newstudent_id_ed);
-        phone = findViewById(R.id.newstudent_phone_ed);
-        address = findViewById(R.id.newstudent_address_ed);
-        cb = findViewById(R.id.newstudent_cb);
-        save = findViewById(R.id.newstudent_save_btn);
+        name = findViewById(R.id.editstudent_name_et);
+        id = findViewById(R.id.editstudent_id_ed);
+        phone = findViewById(R.id.editstudent_phone_ed);
+        address = findViewById(R.id.editstudent_address_ed);
+        cb = findViewById(R.id.editstudent_cb);
+        save = findViewById(R.id.editstudent_save_btn);
         cancel =findViewById(R.id.newstudent_cancel_btn);
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Student student = new Student(name.getText().toString(), id.getText().toString(), cb.isChecked(), phone.getText().toString(), address.getText().toString());
-                Model.instance.addStudent(student);
+                if(!student.getName().isEmpty() && !student.getId().isEmpty() && !student.getPhone().isEmpty() && !student.getAddress().isEmpty()){
+
+                    Model.instance.addStudent(student);
+                    finish();
+                }
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
             }
         });
