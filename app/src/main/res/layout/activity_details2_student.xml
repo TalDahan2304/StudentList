@@ -5,32 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/detailstudent_phone2_ed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailstudent_id2_ed" />
-
-    <EditText
-        android:id="@+id/detailstudent_address2_ed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailstudent_phone2_ed" />
-
     <ImageView
         android:id="@+id/detailstudent_image"
-        android:layout_width="364dp"
-        android:layout_height="225dp"
+        android:layout_width="374dp"
+        android:layout_height="195dp"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/avatar"
@@ -38,56 +16,50 @@
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="72dp"
-        android:text="Id"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toStartOf="@+id/detailstudent_id2_ed"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        android:layout_width="37dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:text="Id:"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/detailstudent_id2_ed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Name"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toStartOf="@+id/detailstudent_name2_ed"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailstudent_image" />
+        android:text="Name:"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/detailstudent_name2_ed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        android:text="Address"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toStartOf="@+id/detailstudent_address2_ed"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        android:layout_marginStart="8dp"
+        android:text="Address:"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/detailstudent_address2_ed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="56dp"
-        android:text="Phone"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toStartOf="@+id/detailstudent_phone2_ed"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        android:layout_marginStart="8dp"
+        android:text="Phone:"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/detailstudent_phone2_ed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/detailstudent_name2_ed"
-        android:layout_width="wrap_content"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="24sp"
@@ -95,10 +67,32 @@
         app:layout_constraintTop_toBottomOf="@+id/detailstudent_image" />
 
     <EditText
-        android:id="@+id/detailstudent_id2_ed"
-        android:layout_width="wrap_content"
+        android:id="@+id/detailstudent_address2_ed"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailstudent_phone2_ed" />
+
+    <EditText
+        android:id="@+id/detailstudent_phone2_ed"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailstudent_id2_ed" />
+
+    <EditText
+        android:id="@+id/detailstudent_id2_ed"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -107,25 +101,25 @@
 
     <CheckBox
         android:id="@+id/detailstudent_cb2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="60dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
         android:text="CB"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailstudent_address2_ed" />
 
     <Button
         android:id="@+id/detailstudent_edit2_btn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="4dp"
+        android:layout_height="46dp"
         android:layout_marginBottom="16dp"
         android:text="Edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailstudent_cb2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailstudent_cb2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
