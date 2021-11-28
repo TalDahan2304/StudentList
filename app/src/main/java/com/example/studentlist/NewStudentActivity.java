@@ -1,0 +1,42 @@
+package com.example.studentlist;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+
+import com.example.studentlist.model.Model;
+import com.example.studentlist.model.Student;
+
+public class NewStudentActivity extends AppCompatActivity {
+
+    EditText name, id, phone, address;
+    CheckBox cb;
+    Button save, cancel;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_new_student);
+
+        name = findViewById(R.id.newstudent_name_et);
+        id = findViewById(R.id.newstudent_id_ed);
+        phone = findViewById(R.id.newstudent_phone_ed);
+        address = findViewById(R.id.newstudent_address_ed);
+        cb = findViewById(R.id.newstudent_cb);
+        save = findViewById(R.id.newstudent_save_btn);
+        cancel =findViewById(R.id.newstudent_cancel_btn);
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Student student = new Student(name.getText().toString(), id.getText().toString(), cb.isChecked(), phone.getText().toString(), address.getText().toString());
+                Model.instance.addStudent(student);
+                finish();
+            }
+        });
+    }
+}

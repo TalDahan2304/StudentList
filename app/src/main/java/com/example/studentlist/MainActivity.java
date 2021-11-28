@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     EditText nameET;
@@ -19,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Reference
-        nameET=findViewById(R.id.main_name_et);
-        idET=findViewById(R.id.main_id_et);
-        cb=findViewById(R.id.main_CB);
-        Button saveBtn=findViewById(R.id.main_save_btn);
-        Button cancelBtn=findViewById(R.id.main_cancel_btn);
+        nameET=findViewById(R.id.newstudent_name_et);
+        idET=findViewById(R.id.newstudent_id_ed);
+        cb=findViewById(R.id.newstudent_cb);
+        Button saveBtn=findViewById(R.id.newstudent_save_btn);
+        Button cancelBtn=findViewById(R.id.newstudent_cancel_btn);
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override

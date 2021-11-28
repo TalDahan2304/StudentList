@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -20,25 +22,39 @@ import java.util.List;
 public class StudentListRvActivity extends AppCompatActivity {
 
     List<Student> data;
+    MyAdapter adapter;
+    Button addstudent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_list_rv);
 
+        ////////////////
+        Intent intentnew = new Intent(this, NewStudentActivity.class);
+        addstudent = findViewById(R.id.studentlistrv_addstudent_btn);
+
+       addstudent.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               startActivity(intentnew);
+           }
+       });
+        ////////////////
         data = Model.instance.getAllStudents();
         RecyclerView list = findViewById(R.id.studentlist_rv);
         list.setHasFixedSize(true);
-
         list.setLayoutManager(new LinearLayoutManager(this));
 
-        MyAdapter adapter = new MyAdapter();
+        adapter = new MyAdapter();
         list.setAdapter(adapter);
 
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void OnItemClick(int position) {
                 Log.d("TAG", "row was clicked" + position);
+                Log.d("TAG", "name of student:" + data.get(position).getName());
+                Log.d("TAG", "id of student:" + data.get(position).getId());
 
             }
         });
@@ -92,7 +108,6 @@ public class StudentListRvActivity extends AppCompatActivity {
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
             Student student = data.get(position);
-
             holder.nameTv.setText(student.getName());
             holder.idTv.setText(student.getId());
             holder.cb.setChecked(student.isFlag());
@@ -102,5 +117,10 @@ public class StudentListRvActivity extends AppCompatActivity {
         public int getItemCount() {
             return data.size();
         }
+    }
+
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
     }
 }
